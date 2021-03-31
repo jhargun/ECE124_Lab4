@@ -1,0 +1,64 @@
+|LogicalStep_Lab4_top
+Clk => U_D_Bin_Counter8bit:UDBC.CLK
+rst_n => ~NO_FANOUT~
+pb[0] => U_D_Bin_Counter8bit:UDBC.RESET_n
+pb[1] => ~NO_FANOUT~
+pb[2] => ~NO_FANOUT~
+pb[3] => ~NO_FANOUT~
+sw[0] => U_D_Bin_Counter8bit:UDBC.CLK_EN
+sw[1] => U_D_Bin_Counter8bit:UDBC.UP1_DOWN0
+sw[2] => ~NO_FANOUT~
+sw[3] => ~NO_FANOUT~
+sw[4] => ~NO_FANOUT~
+sw[5] => ~NO_FANOUT~
+sw[6] => ~NO_FANOUT~
+sw[7] => ~NO_FANOUT~
+leds[0] <= U_D_Bin_Counter8bit:UDBC.COUNTER_BITS[0]
+leds[1] <= U_D_Bin_Counter8bit:UDBC.COUNTER_BITS[1]
+leds[2] <= U_D_Bin_Counter8bit:UDBC.COUNTER_BITS[2]
+leds[3] <= U_D_Bin_Counter8bit:UDBC.COUNTER_BITS[3]
+leds[4] <= U_D_Bin_Counter8bit:UDBC.COUNTER_BITS[4]
+leds[5] <= U_D_Bin_Counter8bit:UDBC.COUNTER_BITS[5]
+leds[6] <= U_D_Bin_Counter8bit:UDBC.COUNTER_BITS[6]
+leds[7] <= U_D_Bin_Counter8bit:UDBC.COUNTER_BITS[7]
+leds[8] <= <GND>
+leds[9] <= <GND>
+leds[10] <= <GND>
+leds[11] <= <GND>
+leds[12] <= <GND>
+leds[13] <= <GND>
+leds[14] <= <GND>
+leds[15] <= <GND>
+
+
+|LogicalStep_Lab4_top|U_D_Bin_Counter8bit:UDBC
+CLK => ud_bin_counter[0].CLK
+CLK => ud_bin_counter[1].CLK
+CLK => ud_bin_counter[2].CLK
+CLK => ud_bin_counter[3].CLK
+CLK => ud_bin_counter[4].CLK
+CLK => ud_bin_counter[5].CLK
+CLK => ud_bin_counter[6].CLK
+CLK => ud_bin_counter[7].CLK
+RESET_n => ud_bin_counter[0].ACLR
+RESET_n => ud_bin_counter[1].ACLR
+RESET_n => ud_bin_counter[2].ACLR
+RESET_n => ud_bin_counter[3].ACLR
+RESET_n => ud_bin_counter[4].ACLR
+RESET_n => ud_bin_counter[5].ACLR
+RESET_n => ud_bin_counter[6].ACLR
+RESET_n => ud_bin_counter[7].ACLR
+CLK_EN => process_0.IN0
+CLK_EN => process_0.IN0
+UP1_DOWN0 => process_0.IN1
+UP1_DOWN0 => process_0.IN1
+COUNTER_BITS[0] <= ud_bin_counter[0].DB_MAX_OUTPUT_PORT_TYPE
+COUNTER_BITS[1] <= ud_bin_counter[1].DB_MAX_OUTPUT_PORT_TYPE
+COUNTER_BITS[2] <= ud_bin_counter[2].DB_MAX_OUTPUT_PORT_TYPE
+COUNTER_BITS[3] <= ud_bin_counter[3].DB_MAX_OUTPUT_PORT_TYPE
+COUNTER_BITS[4] <= ud_bin_counter[4].DB_MAX_OUTPUT_PORT_TYPE
+COUNTER_BITS[5] <= ud_bin_counter[5].DB_MAX_OUTPUT_PORT_TYPE
+COUNTER_BITS[6] <= ud_bin_counter[6].DB_MAX_OUTPUT_PORT_TYPE
+COUNTER_BITS[7] <= ud_bin_counter[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

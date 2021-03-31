@@ -1,0 +1,147 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/ECE124/Lab4/Lab4/simulation/qsim
+Ehard_block
+Z1 w1617170986
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx11 fiftyfivenm 21 fiftyfivenm_atom_pack 0 22 hIbO9BBYYWGW_8lVV<F893
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 DPx11 fiftyfivenm 22 fiftyfivenm_components 0 22 [A0e0UP4j3EDHZ:h0KOS^3
+R0
+Z8 8LogicalStep_Lab4_top.vho
+Z9 FLogicalStep_Lab4_top.vho
+l0
+L35
+Vhj[i;a0dD85B`o1JPT^cg2
+!s100 3A]XnMhF<;9mKUe5mn3aM1
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1617170987
+!i10b 1
+Z12 !s108 1617170987.000000
+Z13 !s90 -work|work|LogicalStep_Lab4_top.vho|
+Z14 !s107 LogicalStep_Lab4_top.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 hj[i;a0dD85B`o1JPT^cg2
+l76
+L54
+Va5ClDYec`9chO`Ne0M1NL2
+!s100 >:Wi^nX[YiN=@>>JC6K_83
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Elogicalstep_lab4_top
+R1
+R3
+R7
+R2
+Z17 DPx6 altera 11 dffeas_pack 0 22 dbC[kT^o8P[ggjb1if:RT1
+R4
+R5
+R6
+Z18 DPx6 altera 28 altera_primitives_components 0 22 PoC3B_7fao?IDTS[NR5Q62
+R0
+R8
+R9
+l0
+L91
+VUzS[g0Lm9`BVbTn4`2ZQj1
+!s100 Y:JXUJf;<T87RSkz7FAYM2
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R17
+R4
+R5
+R6
+R18
+DEx4 work 20 logicalstep_lab4_top 0 22 UzS[g0Lm9`BVbTn4`2ZQj1
+l212
+L134
+V?fSCnzlmODTe>gUMFlVQ:1
+!s100 9_2`ZT1=689QVYYM_1dGS1
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Elogicalstep_lab4_top_vhd_vec_tst
+Z19 w1617170984
+R5
+R6
+R0
+Z20 8Waveform.vwf.vht
+Z21 FWaveform.vwf.vht
+l0
+L32
+VC?l4>S[GXnnoLz0N5hk0O1
+!s100 MHCLOb^9jeSek619`89FV2
+R10
+32
+R11
+!i10b 1
+R12
+Z22 !s90 -work|work|Waveform.vwf.vht|
+Z23 !s107 Waveform.vwf.vht|
+!i113 1
+R15
+R16
+Alogicalstep_lab4_top_arch
+R5
+R6
+Z24 DEx4 work 32 logicalstep_lab4_top_vhd_vec_tst 0 22 C?l4>S[GXnnoLz0N5hk0O1
+l51
+L34
+VozcNKgb?z?fk;TilKUka50
+!s100 ::KBoIQebDVhVzBL:kDHQ3
+R10
+32
+R11
+!i10b 1
+R12
+R22
+R23
+!i113 1
+R15
+R16
