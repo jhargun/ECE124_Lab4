@@ -36,6 +36,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "sw[1]",
+					"strict" : false
+				},
+				{
 					"name" : "Clk",
 					"strict" : false
 				},
@@ -45,10 +49,6 @@
 				},
 				{
 					"name" : "sw[0]",
-					"strict" : false
-				},
-				{
-					"name" : "sw[1]",
 					"strict" : false
 				}
 			]

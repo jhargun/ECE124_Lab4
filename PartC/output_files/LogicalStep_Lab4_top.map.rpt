@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LogicalStep_Lab4_top
-Wed Mar 31 23:23:57 2021
+Thu Apr 01 12:55:35 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -14,11 +14,12 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |LogicalStep_Lab4_top|Extender_State_Machine:Extender_SM|current_state
-  9. General Register Statistics
- 10. Port Connectivity Checks: "Extender_State_Machine:Extender_SM"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. State Machine - |LogicalStep_Lab4_top|Motion_Driver:M_DRIVE|cur_state
+ 10. User-Specified and Inferred Latches
+ 11. General Register Statistics
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -45,15 +46,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 31 23:23:57 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 01 12:55:35 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; LogicalStep_Lab4_top                        ;
 ; Top-level Entity Name              ; LogicalStep_Lab4_top                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 14                                          ;
-;     Total combinational functions  ; 13                                          ;
-;     Dedicated logic registers      ; 10                                          ;
-; Total registers                    ; 10                                          ;
+; Total logic elements               ; 59                                          ;
+;     Total combinational functions  ; 58                                          ;
+;     Dedicated logic registers      ; 22                                          ;
+; Total registers                    ; 22                                          ;
 ; Total pins                         ; 30                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -155,28 +156,32 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                          ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
-; LogicalStep_Lab4_top.vhd         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd   ;         ;
-; Grappler_Control.vhd             ; yes             ; User VHDL File  ; C:/intelFPGA_lite/ECE124/Lab4/PartC/Grappler_Control.vhd       ;         ;
-; Extender_State_Machine.vhd       ; yes             ; User VHDL File  ; C:/intelFPGA_lite/ECE124/Lab4/PartC/Extender_State_Machine.vhd ;         ;
-; Bidir_shift_reg_4bit.vhd         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/ECE124/Lab4/PartC/Bidir_shift_reg_4bit.vhd   ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                          ; Library ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------+---------+
+; Compx4.vhd                       ; yes             ; User VHDL File        ; C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Compx4.vhd                 ;         ;
+; Compx1.vhd                       ; yes             ; User VHDL File        ; C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Compx1.vhd                 ;         ;
+; LogicalStep_Lab4_top.vhd         ; yes             ; User VHDL File        ; C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd   ;         ;
+; Grappler_Control.vhd             ; yes             ; User VHDL File        ; C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Grappler_Control.vhd       ;         ;
+; Extender_State_Machine.vhd       ; yes             ; User VHDL File        ; C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Extender_State_Machine.vhd ;         ;
+; Bidir_shift_reg_4bit.vhd         ; yes             ; User VHDL File        ; C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Bidir_shift_reg_4bit.vhd   ;         ;
+; u_d_bin_counter4bit.vhd          ; yes             ; Auto-Found VHDL File  ; C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/u_d_bin_counter4bit.vhd    ;         ;
+; motion_driver.vhd                ; yes             ; Auto-Found VHDL File  ; C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd          ;         ;
++----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -184,20 +189,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 14          ;
+; Estimated Total logic elements              ; 59          ;
 ;                                             ;             ;
-; Total combinational functions               ; 13          ;
+; Total combinational functions               ; 58          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 8           ;
-;     -- 3 input functions                    ; 2           ;
-;     -- <=2 input functions                  ; 3           ;
+;     -- 4 input functions                    ; 26          ;
+;     -- 3 input functions                    ; 22          ;
+;     -- <=2 input functions                  ; 10          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 13          ;
-;     -- arithmetic mode                      ; 0           ;
+;     -- normal mode                          ; 52          ;
+;     -- arithmetic mode                      ; 6           ;
 ;                                             ;             ;
-; Total registers                             ; 10          ;
-;     -- Dedicated logic registers            ; 10          ;
+; Total registers                             ; 22          ;
+;     -- Dedicated logic registers            ; 22          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 30          ;
@@ -205,9 +210,9 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; rst_n~input ;
-; Maximum fan-out                             ; 10          ;
-; Total fan-out                               ; 113         ;
-; Average fan-out                             ; 1.36        ;
+; Maximum fan-out                             ; 22          ;
+; Total fan-out                               ; 310         ;
+; Average fan-out                             ; 2.21        ;
 +---------------------------------------------+-------------+
 
 
@@ -216,10 +221,13 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                      ; Entity Name            ; Library Name ;
 +-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+------------------------+--------------+
-; |LogicalStep_Lab4_top                   ; 13 (0)              ; 10 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 30   ; 0            ; 0          ; |LogicalStep_Lab4_top                                    ; LogicalStep_Lab4_top   ; work         ;
+; |LogicalStep_Lab4_top                   ; 58 (0)              ; 22 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 30   ; 0            ; 0          ; |LogicalStep_Lab4_top                                    ; LogicalStep_Lab4_top   ; work         ;
 ;    |Bidir_shift_reg_4bit:Extender_bsr|  ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Bidir_shift_reg_4bit:Extender_bsr  ; Bidir_shift_reg_4bit   ; work         ;
-;    |Extender_State_Machine:Extender_SM| ; 8 (8)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Extender_State_Machine:Extender_SM ; Extender_State_Machine ; work         ;
+;    |Extender_State_Machine:Extender_SM| ; 9 (9)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Extender_State_Machine:Extender_SM ; Extender_State_Machine ; work         ;
 ;    |Grappler_Control:g_controller|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Grappler_Control:g_controller      ; Grappler_Control       ; work         ;
+;    |Motion_Driver:M_DRIVE|              ; 32 (32)             ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Motion_Driver:M_DRIVE              ; Motion_Driver          ; work         ;
+;    |U_D_Bin_Counter4bit:X_COUNTER|      ; 6 (6)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|U_D_Bin_Counter4bit:X_COUNTER      ; U_D_Bin_Counter4bit    ; work         ;
+;    |U_D_Bin_Counter4bit:Y_COUNTER|      ; 6 (6)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|U_D_Bin_Counter4bit:Y_COUNTER      ; U_D_Bin_Counter4bit    ; work         ;
 +-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -237,29 +245,53 @@ Encoding Type:  One-Hot
 +------------------+------------------+------------------+------------------+------------------+
 
 
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------+
+; State Machine - |LogicalStep_Lab4_top|Motion_Driver:M_DRIVE|cur_state                                 ;
++---------------------+---------------------+---------------------+-----------------+-------------------+
+; Name                ; cur_state.ERR_STATE ; cur_state.IN_MOTION ; cur_state.BDOWN ; cur_state.STOPPED ;
++---------------------+---------------------+---------------------+-----------------+-------------------+
+; cur_state.STOPPED   ; 0                   ; 0                   ; 0               ; 0                 ;
+; cur_state.BDOWN     ; 0                   ; 0                   ; 1               ; 1                 ;
+; cur_state.IN_MOTION ; 0                   ; 1                   ; 0               ; 1                 ;
+; cur_state.ERR_STATE ; 1                   ; 0                   ; 0               ; 1                 ;
++---------------------+---------------------+---------------------+-----------------+-------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                      ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                       ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; Motion_Driver:M_DRIVE|Y_OUT[0]                      ; Motion_Driver:M_DRIVE|Selector4           ; yes                    ;
+; Motion_Driver:M_DRIVE|Y_OUT[1]                      ; Motion_Driver:M_DRIVE|Selector4           ; yes                    ;
+; Motion_Driver:M_DRIVE|Y_OUT[2]                      ; Motion_Driver:M_DRIVE|Selector4           ; yes                    ;
+; Motion_Driver:M_DRIVE|Y_OUT[3]                      ; Motion_Driver:M_DRIVE|Selector4           ; yes                    ;
+; Motion_Driver:M_DRIVE|Y_UP0_DOWN1                   ; Motion_Driver:M_DRIVE|cur_state.ERR_STATE ; yes                    ;
+; Motion_Driver:M_DRIVE|X_OUT[0]                      ; Motion_Driver:M_DRIVE|Selector4           ; yes                    ;
+; Motion_Driver:M_DRIVE|X_OUT[1]                      ; Motion_Driver:M_DRIVE|Selector4           ; yes                    ;
+; Motion_Driver:M_DRIVE|X_OUT[2]                      ; Motion_Driver:M_DRIVE|Selector4           ; yes                    ;
+; Motion_Driver:M_DRIVE|X_OUT[3]                      ; Motion_Driver:M_DRIVE|Selector4           ; yes                    ;
+; Motion_Driver:M_DRIVE|X_UP0_DOWN1                   ; Motion_Driver:M_DRIVE|cur_state.ERR_STATE ; yes                    ;
+; Motion_Driver:M_DRIVE|EXTEND_EN                     ; Motion_Driver:M_DRIVE|cur_state.ERR_STATE ; yes                    ;
+; Number of user-specified and inferred latches = 11  ;                                           ;                        ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 10    ;
+; Total registers                              ; 22    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 10    ;
+; Number of registers using Asynchronous Clear ; 22    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Extender_State_Machine:Extender_SM"                                                            ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                             ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
-; extender_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; extender_out    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -268,18 +300,21 @@ Encoding Type:  One-Hot
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 30                          ;
-; cycloneiii_ff         ; 10                          ;
-;     CLR               ; 6                           ;
-;     ENA CLR           ; 4                           ;
-; cycloneiii_lcell_comb ; 14                          ;
-;     normal            ; 14                          ;
+; cycloneiii_ff         ; 22                          ;
+;     CLR               ; 12                          ;
+;     ENA CLR           ; 10                          ;
+; cycloneiii_lcell_comb ; 59                          ;
+;     arith             ; 6                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 4                           ;
+;     normal            ; 53                          ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 2                           ;
-;         4 data inputs ; 8                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 26                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.32                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.40                        ;
 +-----------------------+-----------------------------+
 
 
@@ -298,83 +333,91 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Mar 31 23:23:45 2021
+    Info: Processing started: Thu Apr 01 12:55:24 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file compx4.vhd
-    Info (12022): Found design unit 1: Compx4-Circuit File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Compx4.vhd Line: 16
-    Info (12023): Found entity 1: Compx4 File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Compx4.vhd Line: 9
+    Info (12022): Found design unit 1: Compx4-Circuit File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Compx4.vhd Line: 16
+    Info (12023): Found entity 1: Compx4 File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Compx4.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file compx1.vhd
-    Info (12022): Found design unit 1: Compx1-Circuit File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Compx1.vhd Line: 16
-    Info (12023): Found entity 1: Compx1 File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Compx1.vhd Line: 9
+    Info (12022): Found design unit 1: Compx1-Circuit File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Compx1.vhd Line: 16
+    Info (12023): Found entity 1: Compx1 File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Compx1.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file state_machine_example.vhd
-    Info (12022): Found design unit 1: State_Machine_Example-SM File: C:/intelFPGA_lite/ECE124/Lab4/PartC/State_Machine_Example.vhd Line: 13
-    Info (12023): Found entity 1: State_Machine_Example File: C:/intelFPGA_lite/ECE124/Lab4/PartC/State_Machine_Example.vhd Line: 5
+    Info (12022): Found design unit 1: State_Machine_Example-SM File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/State_Machine_Example.vhd Line: 13
+    Info (12023): Found entity 1: State_Machine_Example File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/State_Machine_Example.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file logicalstep_lab4_top.vhd
-    Info (12022): Found design unit 1: LogicalStep_Lab4_top-Circuit File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 18
-    Info (12023): Found entity 1: LogicalStep_Lab4_top File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 7
+    Info (12022): Found design unit 1: LogicalStep_Lab4_top-Circuit File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 18
+    Info (12023): Found entity 1: LogicalStep_Lab4_top File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file bidir_shift_reg.vhd
-    Info (12022): Found design unit 1: Bidir_shift_reg-one File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Bidir_shift_reg.vhd Line: 17
-    Info (12023): Found entity 1: Bidir_shift_reg File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Bidir_shift_reg.vhd Line: 7
+    Info (12022): Found design unit 1: Bidir_shift_reg-one File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Bidir_shift_reg.vhd Line: 17
+    Info (12023): Found entity 1: Bidir_shift_reg File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Bidir_shift_reg.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file u_d_bin_counter8bit.vhd
-    Info (12022): Found design unit 1: U_D_Bin_Counter8bit-one File: C:/intelFPGA_lite/ECE124/Lab4/PartC/U_D_Bin_Counter8bit.vhd Line: 17
-    Info (12023): Found entity 1: U_D_Bin_Counter8bit File: C:/intelFPGA_lite/ECE124/Lab4/PartC/U_D_Bin_Counter8bit.vhd Line: 7
+    Info (12022): Found design unit 1: U_D_Bin_Counter8bit-one File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/U_D_Bin_Counter8bit.vhd Line: 17
+    Info (12023): Found entity 1: U_D_Bin_Counter8bit File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/U_D_Bin_Counter8bit.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file grappler_control.vhd
-    Info (12022): Found design unit 1: Grappler_Control-one File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Grappler_Control.vhd Line: 16
-    Info (12023): Found entity 1: Grappler_Control File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Grappler_Control.vhd Line: 7
+    Info (12022): Found design unit 1: Grappler_Control-one File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Grappler_Control.vhd Line: 16
+    Info (12023): Found entity 1: Grappler_Control File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Grappler_Control.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file extender_state_machine.vhd
-    Info (12022): Found design unit 1: Extender_State_Machine-SM File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Extender_State_Machine.vhd Line: 16
-    Info (12023): Found entity 1: Extender_State_Machine File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Extender_State_Machine.vhd Line: 7
+    Info (12022): Found design unit 1: Extender_State_Machine-SM File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Extender_State_Machine.vhd Line: 16
+    Info (12023): Found entity 1: Extender_State_Machine File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Extender_State_Machine.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file bidir_shift_reg_4bit.vhd
-    Info (12022): Found design unit 1: Bidir_shift_reg_4bit-one File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Bidir_shift_reg_4bit.vhd Line: 17
-    Info (12023): Found entity 1: Bidir_shift_reg_4bit File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Bidir_shift_reg_4bit.vhd Line: 7
+    Info (12022): Found design unit 1: Bidir_shift_reg_4bit-one File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Bidir_shift_reg_4bit.vhd Line: 17
+    Info (12023): Found entity 1: Bidir_shift_reg_4bit File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Bidir_shift_reg_4bit.vhd Line: 7
 Info (12127): Elaborating entity "LogicalStep_Lab4_top" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at LogicalStep_Lab4_top.vhd(58): object "extender_out" assigned a value but never read File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 58
-Warning (10873): Using initial value X (don't care) for net "leds[15..8]" at LogicalStep_Lab4_top.vhd(14) File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-Warning (10873): Using initial value X (don't care) for net "leds[2..0]" at LogicalStep_Lab4_top.vhd(14) File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-Info (12128): Elaborating entity "Extender_State_Machine" for hierarchy "Extender_State_Machine:Extender_SM" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 78
-Warning (10492): VHDL Process Statement warning at Extender_State_Machine.vhd(58): signal "previous_extender_toggle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Extender_State_Machine.vhd Line: 58
-Warning (10492): VHDL Process Statement warning at Extender_State_Machine.vhd(74): signal "previous_extender_toggle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Extender_State_Machine.vhd Line: 74
-Info (12128): Elaborating entity "Bidir_shift_reg_4bit" for hierarchy "Bidir_shift_reg_4bit:Extender_bsr" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 81
-Warning (10492): VHDL Process Statement warning at Bidir_shift_reg_4bit.vhd(28): signal "CLK_EN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Bidir_shift_reg_4bit.vhd Line: 28
-Info (12128): Elaborating entity "Grappler_Control" for hierarchy "Grappler_Control:g_controller" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 83
-Warning (10492): VHDL Process Statement warning at Grappler_Control.vhd(24): signal "rst_n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Grappler_Control.vhd Line: 24
-Warning (10492): VHDL Process Statement warning at Grappler_Control.vhd(26): signal "Grappler_Enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Grappler_Control.vhd Line: 26
+Warning (10873): Using initial value X (don't care) for net "leds[2..1]" at LogicalStep_Lab4_top.vhd(14) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+Warning (12125): Using design file u_d_bin_counter4bit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: U_D_Bin_Counter4bit-one File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/u_d_bin_counter4bit.vhd Line: 18
+    Info (12023): Found entity 1: U_D_Bin_Counter4bit File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/u_d_bin_counter4bit.vhd Line: 7
+Info (12128): Elaborating entity "U_D_Bin_Counter4bit" for hierarchy "U_D_Bin_Counter4bit:X_COUNTER" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 121
+Info (12128): Elaborating entity "Compx4" for hierarchy "Compx4:X_DRIVE" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 124
+Info (12128): Elaborating entity "Compx1" for hierarchy "Compx4:X_DRIVE|Compx1:comp0" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Compx4.vhd Line: 40
+Warning (12125): Using design file motion_driver.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: Motion_Driver-Circuit File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 25
+    Info (12023): Found entity 1: Motion_Driver File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 5
+Info (12128): Elaborating entity "Motion_Driver" for hierarchy "Motion_Driver:M_DRIVE" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 127
+Warning (10492): VHDL Process Statement warning at motion_driver.vhd(61): signal "X_T" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 61
+Warning (10492): VHDL Process Statement warning at motion_driver.vhd(62): signal "Y_T" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 62
+Warning (10631): VHDL Process Statement warning at motion_driver.vhd(44): inferring latch(es) for signal or variable "X_OUT", which holds its previous value in one or more paths through the process File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at motion_driver.vhd(44): inferring latch(es) for signal or variable "Y_OUT", which holds its previous value in one or more paths through the process File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at motion_driver.vhd(85): inferring latch(es) for signal or variable "EXTEND_EN", which holds its previous value in one or more paths through the process File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 85
+Warning (10631): VHDL Process Statement warning at motion_driver.vhd(85): inferring latch(es) for signal or variable "X_UP0_DOWN1", which holds its previous value in one or more paths through the process File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 85
+Warning (10631): VHDL Process Statement warning at motion_driver.vhd(85): inferring latch(es) for signal or variable "Y_UP0_DOWN1", which holds its previous value in one or more paths through the process File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 85
+Info (10041): Inferred latch for "Y_UP0_DOWN1" at motion_driver.vhd(85) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 85
+Info (10041): Inferred latch for "X_UP0_DOWN1" at motion_driver.vhd(85) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 85
+Info (10041): Inferred latch for "EXTEND_EN" at motion_driver.vhd(85) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 85
+Info (10041): Inferred latch for "Y_OUT[0]" at motion_driver.vhd(44) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 44
+Info (10041): Inferred latch for "Y_OUT[1]" at motion_driver.vhd(44) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 44
+Info (10041): Inferred latch for "Y_OUT[2]" at motion_driver.vhd(44) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 44
+Info (10041): Inferred latch for "Y_OUT[3]" at motion_driver.vhd(44) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 44
+Info (10041): Inferred latch for "X_OUT[0]" at motion_driver.vhd(44) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 44
+Info (10041): Inferred latch for "X_OUT[1]" at motion_driver.vhd(44) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 44
+Info (10041): Inferred latch for "X_OUT[2]" at motion_driver.vhd(44) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 44
+Info (10041): Inferred latch for "X_OUT[3]" at motion_driver.vhd(44) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/motion_driver.vhd Line: 44
+Info (12128): Elaborating entity "Extender_State_Machine" for hierarchy "Extender_State_Machine:Extender_SM" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 131
+Warning (10492): VHDL Process Statement warning at Extender_State_Machine.vhd(58): signal "previous_extender_toggle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Extender_State_Machine.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at Extender_State_Machine.vhd(74): signal "previous_extender_toggle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Extender_State_Machine.vhd Line: 74
+Info (12128): Elaborating entity "Bidir_shift_reg_4bit" for hierarchy "Bidir_shift_reg_4bit:Extender_bsr" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 134
+Warning (10492): VHDL Process Statement warning at Bidir_shift_reg_4bit.vhd(28): signal "CLK_EN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Bidir_shift_reg_4bit.vhd Line: 28
+Info (12128): Elaborating entity "Grappler_Control" for hierarchy "Grappler_Control:g_controller" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 136
+Warning (10492): VHDL Process Statement warning at Grappler_Control.vhd(24): signal "rst_n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Grappler_Control.vhd Line: 24
+Warning (10492): VHDL Process Statement warning at Grappler_Control.vhd(26): signal "Grappler_Enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Grappler_Control.vhd Line: 26
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "leds[0]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[1]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[2]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[8]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[9]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[10]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[11]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[12]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[13]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[14]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[15]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[1]" is stuck at GND File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[2]" is stuck at GND File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 10 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "pb[2]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 12
-    Warning (15610): No output dependent on input pin "pb[3]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 12
-    Warning (15610): No output dependent on input pin "sw[0]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[1]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[2]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[3]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[4]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[5]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[6]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[7]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
-Info (21057): Implemented 44 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "pb[3]" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 12
+Info (21057): Implemented 89 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 14 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
-    Info: Peak virtual memory: 4790 megabytes
-    Info: Processing ended: Wed Mar 31 23:23:57 2021
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:26
+    Info (21061): Implemented 59 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4801 megabytes
+    Info: Processing ended: Thu Apr 01 12:55:35 2021
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:24
 
 

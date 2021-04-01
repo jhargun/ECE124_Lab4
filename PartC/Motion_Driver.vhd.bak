@@ -1,0 +1,144 @@
+--Nick Liu & Erik Lungulescu
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+
+
+entity Motion_Driver is
+ 	port (
+			MOTION: in std_logic;
+			x_target, y_target: in std_logic_vector(3 downto 0);
+			extender_out: in std_logic;
+			clk: in std_logic;
+			reset_n: in std_logic;
+			X_EQ, X_GT, X_LT: in std_logic;
+			Y_EQ, Y_GT, Y_LT: in std_logic;
+
+			error: out std_logic;
+			x_clk_en, y_clk_en: out std_logic;
+			x_up_down, y_up_down: out std_logic;
+			x_out, y_out: out std_logic_vector(3 downto 0);
+			extender_en: out std_logic;
+			motion_button_reset: out std_logic
+	
+			
+			
+			);
+
+ end Motion_Driver;
+
+ architecture Circuit of Motion_Driver is
+ 
+ type STATE_NAME is (initial, buttonReleased, moving, errorState);
+ 
+ signal current_state, next_state: STATE_NAME;
+ signal cur_x 							: std_logic_vector(3 downto 0) := "0000";
+ signal cur_y 							: std_logic_vector(3 downto 0) := "0000";
+
+ 
+ 
+ begin
+	Register_Section: process (clk, reset_n, next_state)
+		begin
+			if (reset_n = '0') then
+				current_state <= initial;
+			elsif (rising_edge(clk)) then
+				current_state <= next_state;
+			end if;
+			
+		end process;
+ 
+	Transition_Section: process (MOTION, extender_out, current_state, X_EQ, X_GT, X_LT, Y_EQ, Y_GT, Y_LT)
+	
+	begin 
+		case current_state is
+			when initial => 
+				if (MOTION = '1' AND extender_out = '0') then
+					next_state <= buttonReleased;
+				elsif (MOTION = '1' AND extender_out = '1') then
+					next_state <= errorState;
+				else 
+					next_state <= initial;
+				end if;
+			
+			when buttonReleased =>
+				if (MOTION = '0') then	
+					next_state <= moving;
+					x_out <= x_target;
+					y_out <= y_target;
+				
+				else 
+					next_state <= buttonReleased;
+				
+				end if;
+
+			when moving =>
+				if (extender_out = '1') then
+					next_state <= errorState;
+				
+				elsif (X_EQ = '1' AND Y_EQ = '1') then
+					next_state <= initial;
+				
+				else 
+					next_state <= moving;
+				end if;
+				
+			when errorState => 
+				if (extender_out = '0') then
+					next_state <= initial;
+				else 
+					next_state <= errorState;
+				end if;
+			end case;
+		end process;
+	
+	Decoder_section: process (current_state, X_EQ, X_GT, X_LT, Y_EQ, Y_GT, Y_LT)
+	begin
+		case current_state is
+			when initial =>
+				extender_en <= '1';
+				x_clk_en <= '0';
+				y_clk_en <= '0';
+
+				x_up_down <= '0';
+				y_up_down <= '0';
+				error <= '0';
+
+			
+			when buttonReleased =>
+				extender_en <= '0';
+				x_clk_en <= '0';
+				y_clk_en <= '0';
+				x_up_down <= '0';
+				y_up_down <= '0';
+
+
+			when moving =>
+				x_out <= cur_x;
+				y_out <= cur_y;
+
+				x_clk_en <= NOT X_EQ;
+				y_clk_en <= NOT Y_EQ;
+				
+				x_up_down <= X_LT;
+				y_up_down <= Y_LT;
+
+				extender_en <= '0';
+				error <= '0';
+
+
+		
+			when errorState =>
+				error <= '1';
+				x_clk_en <= '0';
+				y_clk_en <= '0';
+
+				
+			
+			end case;
+	end process;
+				
+				
+ 
+ end circuit;
+

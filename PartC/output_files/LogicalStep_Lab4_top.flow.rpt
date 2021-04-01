@@ -1,5 +1,5 @@
 Flow report for LogicalStep_Lab4_top
-Wed Mar 31 23:37:33 2021
+Thu Apr 01 14:31:30 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -38,28 +38,28 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Wed Mar 31 23:37:33 2021       ;
-; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
-; Revision Name                      ; LogicalStep_Lab4_top                        ;
-; Top-level Entity Name              ; LogicalStep_Lab4_top                        ;
-; Family                             ; MAX 10                                      ;
-; Device                             ; 10M08DAF484C8G                              ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 14 / 8,064 ( < 1 % )                        ;
-;     Total combinational functions  ; 14 / 8,064 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 10 / 8,064 ( < 1 % )                        ;
-; Total registers                    ; 10                                          ;
-; Total pins                         ; 30 / 250 ( 12 % )                           ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 387,072 ( 0 % )                         ;
-; Embedded Multiplier 9-bit elements ; 0 / 48 ( 0 % )                              ;
-; Total PLLs                         ; 0 / 2 ( 0 % )                               ;
-; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
-; ADC blocks                         ; 0 / 1 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Flow Summary                                                                              ;
++------------------------------------+------------------------------------------------------+
+; Flow Status                        ; EDA Netlist Writer Failed - Thu Apr 01 14:31:30 2021 ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition          ;
+; Revision Name                      ; LogicalStep_Lab4_top                                 ;
+; Top-level Entity Name              ; LogicalStep_Lab4_top                                 ;
+; Family                             ; MAX 10                                               ;
+; Device                             ; 10M08DAF484C8G                                       ;
+; Timing Models                      ; Final                                                ;
+; Total logic elements               ; 60 / 8,064 ( < 1 % )                                 ;
+;     Total combinational functions  ; 59 / 8,064 ( < 1 % )                                 ;
+;     Dedicated logic registers      ; 22 / 8,064 ( < 1 % )                                 ;
+; Total registers                    ; 22                                                   ;
+; Total pins                         ; 30 / 250 ( 12 % )                                    ;
+; Total virtual pins                 ; 0                                                    ;
+; Total memory bits                  ; 0 / 387,072 ( 0 % )                                  ;
+; Embedded Multiplier 9-bit elements ; 0 / 48 ( 0 % )                                       ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                        ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                                        ;
+; ADC blocks                         ; 0 / 1 ( 0 % )                                        ;
++------------------------------------+------------------------------------------------------+
 
 
 +------------------------------------------+
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+----------------------+
 ; Option            ; Setting              ;
 +-------------------+----------------------+
-; Start date & time ; 03/31/2021 23:23:46  ;
+; Start date & time ; 04/01/2021 12:55:24  ;
 ; Main task         ; Compilation          ;
 ; Revision Name     ; LogicalStep_Lab4_top ;
 +-------------------+----------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 968728314556.161724742665224           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 91762150181.161729612409940            ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -95,19 +95,29 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4790 MB             ; 00:00:26                           ;
-; Fitter               ; 00:00:07     ; 1.0                     ; 5296 MB             ; 00:00:07                           ;
-; Assembler            ; 00:00:02     ; 1.0                     ; 4690 MB             ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4766 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4636 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4636 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4636 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4636 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4645 MB             ; 00:00:01                           ;
-; Total                ; 00:00:33     ; --                      ; --                  ; 00:00:45                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4801 MB             ; 00:00:24                           ;
+; Fitter               ; 00:00:09     ; 1.0                     ; 5687 MB             ; 00:00:09                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 4683 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4808 MB             ; 00:00:02                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4629 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4628 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4628 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4637 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4628 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4628 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4637 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4628 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4637 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4628 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4628 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4628 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4628 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4628 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4637 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4628 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4628 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4628 MB             ; 00:00:00                           ;
+; Total                ; 00:00:33     ; --                      ; --                  ; 00:00:51                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -116,18 +126,28 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-BS57B45  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-6AS9G70  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -138,14 +158,24 @@ quartus_map --read_settings_files=on --write_settings_files=off LogicalStep_Lab4
 quartus_fit --read_settings_files=off --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top
 quartus_asm --read_settings_files=off --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top
 quartus_sta LogicalStep_Lab4 -c LogicalStep_Lab4_top
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Waveform1.vwf --testbench_file=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/Waveform1.vwf.vht
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Waveform1.vwf --testbench_file=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/Waveform1.vwf.vht
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/WaveformFinalPart.vwf --testbench_file=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/WaveformFinalPart.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/ LogicalStep_Lab4 -c LogicalStep_Lab4_top
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/WaveformFinalPart.vwf --testbench_file=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/WaveformFinalPart.vwf.vt
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/WaveformFinalPart.vwf --testbench_file=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/WaveformFinalPart.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/ LogicalStep_Lab4 -c LogicalStep_Lab4_top
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/WaveformFinalPart.vwf --testbench_file=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/WaveformFinalPart.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/ LogicalStep_Lab4 -c LogicalStep_Lab4_top
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source="C:/Users/nickl/Desktop/1B/ECE 124/Lab 4/Waveform.vwf" --testbench_file="C:/Users/nickl/Desktop/1B/ECE 124/Lab 4/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source="C:/Users/nickl/Desktop/1B/ECE 124/Lab 4/Waveform.vwf" --testbench_file="C:/Users/nickl/Desktop/1B/ECE 124/Lab 4/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source="C:/Users/anish/OneDrive/Documents/GitHub/My-Personal-Website/static/blog-imgs/Lab_4/Lab 4/Waveform.vwf" --testbench_file="C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/../../My-Personal-Website/static/blog-imgs/Lab_4/Lab 4/Waveform.vwf.vt"
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/intelFPGA_lite/ECE124/Lab4/PartC/Waveform.vwf --testbench_file=C:/intelFPGA_lite/ECE124/Lab4/PartC/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/intelFPGA_lite/ECE124/Lab4/PartC/simulation/qsim/ LogicalStep_Lab4 -c LogicalStep_Lab4_top
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/intelFPGA_lite/ECE124/Lab4/PartC/Waveform.vwf --testbench_file=C:/intelFPGA_lite/ECE124/Lab4/PartC/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/intelFPGA_lite/ECE124/Lab4/PartC/simulation/qsim/ LogicalStep_Lab4 -c LogicalStep_Lab4_top
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/intelFPGA_lite/ECE124/Lab4/PartC/Waveform.vwf --testbench_file=C:/intelFPGA_lite/ECE124/Lab4/PartC/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/intelFPGA_lite/ECE124/Lab4/PartC/simulation/qsim/ LogicalStep_Lab4 -c LogicalStep_Lab4_top
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/intelFPGA_lite/ECE124/Lab4/PartC/Waveform.vwf --testbench_file=C:/intelFPGA_lite/ECE124/Lab4/PartC/simulation/qsim/Waveform.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/intelFPGA_lite/ECE124/Lab4/PartC/simulation/qsim/ LogicalStep_Lab4 -c LogicalStep_Lab4_top
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/Waveform.vwf --testbench_file=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/ LogicalStep_Lab4 -c LogicalStep_Lab4_top
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/intelFPGA_lite/ECE124/Lab4/Lab4/Waveform.vwf --testbench_file=C:/intelFPGA_lite/ECE124/Lab4/Lab4/simulation/qsim/Waveform.vwf.vht
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Waveform.vwf --testbench_file=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/../PartA/Part1/Waveform.vwf.vt
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Waveform.vwf --testbench_file=C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/../PartA/Part1/Waveform.vwf.vt
 
 
 

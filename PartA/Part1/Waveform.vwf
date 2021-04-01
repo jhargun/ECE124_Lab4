@@ -1,16 +1,16 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source="C:/intelFPGA_lite/ECE124/Lab4/Lab4/Waveform.vwf" --testbench_file="C:/intelFPGA_lite/ECE124/Lab4/Lab4/simulation/qsim/Waveform.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source="C:/intelFPGA_lite/ECE124/Lab4/Lab4/Waveform.vwf" --testbench_file="C:/intelFPGA_lite/ECE124/Lab4/Lab4/simulation/qsim/Waveform.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/intelFPGA_lite/ECE124/Lab4/Lab4/simulation/qsim/" LogicalStep_Lab4 -c LogicalStep_Lab4_top</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/intelFPGA_lite/ECE124/Lab4/Lab4/simulation/qsim/" LogicalStep_Lab4 -c LogicalStep_Lab4_top</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source="C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Waveform.vwf" --testbench_file="C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/../PartA/Part1/Waveform.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top --vector_source="C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Waveform.vwf" --testbench_file="C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/../PartA/Part1/Waveform.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/" LogicalStep_Lab4 -c LogicalStep_Lab4_top</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartC/simulation/qsim/" LogicalStep_Lab4 -c LogicalStep_Lab4_top</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
-vcom -work work LogicalStep_Lab4_top.vho
-vcom -work work Waveform.vwf.vht
-vsim -novopt -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.LogicalStep_Lab4_top_vhd_vec_tst
+vlog -work work LogicalStep_Lab4_top.vo
+vlog -work work ../PartA/Part1/Waveform.vwf.vt
+vsim -novopt -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.LogicalStep_Lab4_top_vlg_vec_tst
 vcd file -direction LogicalStep_Lab4.msim.vcd
-vcd add -internal LogicalStep_Lab4_top_vhd_vec_tst/*
-vcd add -internal LogicalStep_Lab4_top_vhd_vec_tst/i1/*
+vcd add -internal LogicalStep_Lab4_top_vlg_vec_tst/*
+vcd add -internal LogicalStep_Lab4_top_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -20,17 +20,15 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
-vcom -work work LogicalStep_Lab4_top.vho
-vcom -work work Waveform.vwf.vht
-vsim -novopt -c -t 1ps -sdfmax LogicalStep_Lab4_top_vhd_vec_tst/i1=LogicalStep_Lab4_top_vhd.sdo -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.LogicalStep_Lab4_top_vhd_vec_tst
+vlog -work work LogicalStep_Lab4_top.vo
+vlog -work work ../PartA/Part1/Waveform.vwf.vt
+vsim -novopt -c -t 1ps -L fiftyfivenm_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.LogicalStep_Lab4_top_vlg_vec_tst
 vcd file -direction LogicalStep_Lab4.msim.vcd
-vcd add -internal LogicalStep_Lab4_top_vhd_vec_tst/*
-vcd add -internal LogicalStep_Lab4_top_vhd_vec_tst/i1/*
+vcd add -internal LogicalStep_Lab4_top_vlg_vec_tst/*
+vcd add -internal LogicalStep_Lab4_top_vlg_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -40,10 +38,8 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
 </modelsim_script_timing>
-<hdl_lang>vhdl</hdl_lang>
+<hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text

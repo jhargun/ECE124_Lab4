@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LogicalStep_Lab4_top
-Wed Mar 31 00:08:25 2021
+Thu Apr 01 14:32:15 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -43,13 +43,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 31 00:08:25 2021       ;
+; Analysis & Synthesis Status        ; Successful - Thu Apr 01 14:32:15 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; LogicalStep_Lab4_top                        ;
 ; Top-level Entity Name              ; LogicalStep_Lab4_top                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 9                                           ;
-;     Total combinational functions  ; 9                                           ;
+; Total logic elements               ; 8                                           ;
+;     Total combinational functions  ; 8                                           ;
 ;     Dedicated logic registers      ; 8                                           ;
 ; Total registers                    ; 8                                           ;
 ; Total pins                         ; 30                                          ;
@@ -153,26 +153,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processors 2-6         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                       ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
-; LogicalStep_Lab4_top.vhd         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd ;         ;
-; U_D_Bin_Counter8bit.vhd          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/ECE124/Lab4/Lab4/U_D_Bin_Counter8bit.vhd  ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                     ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                              ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
+; LogicalStep_Lab4_top.vhd         ; yes             ; User VHDL File  ; C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd ;         ;
+; Bidir_shift_reg.vhd              ; yes             ; User VHDL File  ; C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Bidir_shift_reg.vhd      ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -180,17 +180,17 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 9           ;
+; Estimated Total logic elements              ; 8           ;
 ;                                             ;             ;
-; Total combinational functions               ; 9           ;
+; Total combinational functions               ; 8           ;
 ; Logic element usage by number of LUT inputs ;             ;
 ;     -- 4 input functions                    ; 0           ;
 ;     -- 3 input functions                    ; 6           ;
-;     -- <=2 input functions                  ; 3           ;
+;     -- <=2 input functions                  ; 2           ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 2           ;
-;     -- arithmetic mode                      ; 7           ;
+;     -- normal mode                          ; 8           ;
+;     -- arithmetic mode                      ; 0           ;
 ;                                             ;             ;
 ; Total registers                             ; 8           ;
 ;     -- Dedicated logic registers            ; 8           ;
@@ -200,21 +200,21 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; sw[0]~input ;
-; Maximum fan-out                             ; 9           ;
-; Total fan-out                               ; 94          ;
-; Average fan-out                             ; 1.22        ;
+; Maximum fan-out node                        ; sw[1]~input ;
+; Maximum fan-out                             ; 8           ;
+; Total fan-out                               ; 92          ;
+; Average fan-out                             ; 1.21        ;
 +---------------------------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                       ;
-+-------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------+----------------------+--------------+
-; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                            ; Entity Name          ; Library Name ;
-+-------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------+----------------------+--------------+
-; |LogicalStep_Lab4_top         ; 9 (0)               ; 8 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 30   ; 0            ; 0          ; |LogicalStep_Lab4_top                          ; LogicalStep_Lab4_top ; work         ;
-;    |U_D_Bin_Counter8bit:UDBC| ; 9 (9)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|U_D_Bin_Counter8bit:UDBC ; U_D_Bin_Counter8bit  ; work         ;
-+-------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------+----------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                               ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                       ; Entity Name          ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+----------------------+--------------+
+; |LogicalStep_Lab4_top      ; 8 (0)               ; 8 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 30   ; 0            ; 0          ; |LogicalStep_Lab4_top                     ; LogicalStep_Lab4_top ; work         ;
+;    |Bidir_shift_reg:Bsr|   ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Bidir_shift_reg:Bsr ; Bidir_shift_reg      ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -241,16 +241,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; boundary_port         ; 30                          ;
 ; cycloneiii_ff         ; 8                           ;
 ;     ENA CLR           ; 8                           ;
-; cycloneiii_lcell_comb ; 10                          ;
-;     arith             ; 7                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 6                           ;
-;     normal            ; 3                           ;
+; cycloneiii_lcell_comb ; 9                           ;
+;     normal            ; 9                           ;
 ;         0 data inputs ; 1                           ;
 ;         2 data inputs ; 2                           ;
+;         3 data inputs ; 6                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.60                        ;
-; Average LUT depth     ; 1.83                        ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -259,7 +257,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -269,62 +267,63 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Mar 31 00:08:07 2021
+    Info: Processing started: Thu Apr 01 14:32:05 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file compx4.vhd
-    Info (12022): Found design unit 1: Compx4-Circuit File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/Compx4.vhd Line: 16
-    Info (12023): Found entity 1: Compx4 File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/Compx4.vhd Line: 9
+    Info (12022): Found design unit 1: Compx4-Circuit File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Compx4.vhd Line: 16
+    Info (12023): Found entity 1: Compx4 File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Compx4.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file compx1.vhd
-    Info (12022): Found design unit 1: Compx1-Circuit File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/Compx1.vhd Line: 16
-    Info (12023): Found entity 1: Compx1 File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/Compx1.vhd Line: 9
+    Info (12022): Found design unit 1: Compx1-Circuit File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Compx1.vhd Line: 16
+    Info (12023): Found entity 1: Compx1 File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Compx1.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file state_machine_example.vhd
-    Info (12022): Found design unit 1: State_Machine_Example-SM File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/State_Machine_Example.vhd Line: 13
-    Info (12023): Found entity 1: State_Machine_Example File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/State_Machine_Example.vhd Line: 5
+    Info (12022): Found design unit 1: State_Machine_Example-SM File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/State_Machine_Example.vhd Line: 13
+    Info (12023): Found entity 1: State_Machine_Example File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/State_Machine_Example.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file logicalstep_lab4_top.vhd
-    Info (12022): Found design unit 1: LogicalStep_Lab4_top-Circuit File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 18
-    Info (12023): Found entity 1: LogicalStep_Lab4_top File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 7
+    Info (12022): Found design unit 1: LogicalStep_Lab4_top-Circuit File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 18
+    Info (12023): Found entity 1: LogicalStep_Lab4_top File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file bidir_shift_reg.vhd
-    Info (12022): Found design unit 1: Bidir_shift_reg-one File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/Bidir_shift_reg.vhd Line: 17
-    Info (12023): Found entity 1: Bidir_shift_reg File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/Bidir_shift_reg.vhd Line: 7
+    Info (12022): Found design unit 1: Bidir_shift_reg-one File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Bidir_shift_reg.vhd Line: 17
+    Info (12023): Found entity 1: Bidir_shift_reg File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Bidir_shift_reg.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file u_d_bin_counter8bit.vhd
-    Info (12022): Found design unit 1: U_D_Bin_Counter8bit-one File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/U_D_Bin_Counter8bit.vhd Line: 15
-    Info (12023): Found entity 1: U_D_Bin_Counter8bit File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/U_D_Bin_Counter8bit.vhd Line: 5
+    Info (12022): Found design unit 1: U_D_Bin_Counter8bit-one File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/U_D_Bin_Counter8bit.vhd Line: 17
+    Info (12023): Found entity 1: U_D_Bin_Counter8bit File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/U_D_Bin_Counter8bit.vhd Line: 7
 Info (12127): Elaborating entity "LogicalStep_Lab4_top" for the top level hierarchy
-Warning (10873): Using initial value X (don't care) for net "leds[15..8]" at LogicalStep_Lab4_top.vhd(14) File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 14
-Info (12128): Elaborating entity "U_D_Bin_Counter8bit" for hierarchy "U_D_Bin_Counter8bit:UDBC" File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 56
+Warning (10873): Using initial value X (don't care) for net "leds[15..8]" at LogicalStep_Lab4_top.vhd(14) File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 14
+Info (12128): Elaborating entity "Bidir_shift_reg" for hierarchy "Bidir_shift_reg:Bsr" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 53
+Warning (10492): VHDL Process Statement warning at Bidir_shift_reg.vhd(28): signal "CLK_EN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/Bidir_shift_reg.vhd Line: 28
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "leds[8]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[9]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[10]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[11]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[12]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[13]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[14]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 14
-    Warning (13410): Pin "leds[15]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[8]" is stuck at GND File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[9]" is stuck at GND File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[10]" is stuck at GND File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[11]" is stuck at GND File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[12]" is stuck at GND File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[13]" is stuck at GND File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[14]" is stuck at GND File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[15]" is stuck at GND File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 14
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 10 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "rst_n" File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 11
-    Warning (15610): No output dependent on input pin "pb[1]" File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 12
-    Warning (15610): No output dependent on input pin "pb[2]" File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 12
-    Warning (15610): No output dependent on input pin "pb[3]" File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 12
-    Warning (15610): No output dependent on input pin "sw[2]" File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[3]" File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[4]" File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[5]" File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[6]" File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 13
-    Warning (15610): No output dependent on input pin "sw[7]" File: C:/intelFPGA_lite/ECE124/Lab4/Lab4/LogicalStep_Lab4_top.vhd Line: 13
-Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "rst_n" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 11
+    Warning (15610): No output dependent on input pin "pb[1]" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 12
+    Warning (15610): No output dependent on input pin "pb[2]" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 12
+    Warning (15610): No output dependent on input pin "pb[3]" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 12
+    Warning (15610): No output dependent on input pin "sw[2]" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[3]" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[4]" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[5]" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[6]" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[7]" File: C:/Users/anish/OneDrive/Documents/GitHub/ECE124_Lab4/PartA/Part1/LogicalStep_Lab4_top.vhd Line: 13
+Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 9 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 4791 megabytes
-    Info: Processing ended: Wed Mar 31 00:08:25 2021
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:33
+    Info (21061): Implemented 8 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 4801 megabytes
+    Info: Processing ended: Thu Apr 01 14:32:15 2021
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:25
 
 

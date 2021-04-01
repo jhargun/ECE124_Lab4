@@ -5,3 +5,10 @@ current_state.S0 0 0 0 0
 current_state.S1 0 0 1 1 
 current_state.S2 0 1 0 1 
 current_state.S3 1 0 0 1 
+
+State Machine - |LogicalStep_Lab4_top|Motion_Driver:M_DRIVE|cur_state
+Name cur_state.ERR_STATE cur_state.IN_MOTION cur_state.BDOWN cur_state.STOPPED 
+cur_state.STOPPED 0 0 0 0 
+cur_state.BDOWN 0 0 1 1 
+cur_state.IN_MOTION 0 1 0 1 
+cur_state.ERR_STATE 1 0 0 1 

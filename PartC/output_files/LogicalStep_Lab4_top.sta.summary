@@ -3,75 +3,123 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'Clk'
-Slack : -1.049
-TNS   : -6.950
+Slack : -5.191
+TNS   : -61.336
+
+Type  : Slow 1200mV 85C Model Setup 'Motion_Driver:M_DRIVE|cur_state.ERR_STATE'
+Slack : -4.818
+TNS   : -11.715
 
 Type  : Slow 1200mV 85C Model Setup 'pb[0]'
-Slack : -0.615
-TNS   : -0.615
+Slack : -0.547
+TNS   : -0.547
 
 Type  : Slow 1200mV 85C Model Hold 'Clk'
-Slack : 0.362
+Slack : 0.342
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'pb[0]'
 Slack : 0.394
 TNS   : 0.000
 
+Type  : Slow 1200mV 85C Model Hold 'Motion_Driver:M_DRIVE|cur_state.ERR_STATE'
+Slack : 0.976
+TNS   : 0.000
+
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clk'
 Slack : -3.000
-TNS   : -16.383
+TNS   : -34.227
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pb[0]'
 Slack : -3.000
 TNS   : -4.487
 
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pb[2]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Motion_Driver:M_DRIVE|cur_state.ERR_STATE'
+Slack : 0.463
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Setup 'Clk'
-Slack : -0.881
-TNS   : -5.732
+Slack : -4.761
+TNS   : -56.498
+
+Type  : Slow 1200mV 0C Model Setup 'Motion_Driver:M_DRIVE|cur_state.ERR_STATE'
+Slack : -4.486
+TNS   : -10.879
 
 Type  : Slow 1200mV 0C Model Setup 'pb[0]'
-Slack : -0.529
-TNS   : -0.529
+Slack : -0.427
+TNS   : -0.427
 
 Type  : Slow 1200mV 0C Model Hold 'Clk'
-Slack : 0.324
+Slack : 0.305
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'pb[0]'
 Slack : 0.352
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Hold 'Motion_Driver:M_DRIVE|cur_state.ERR_STATE'
+Slack : 0.893
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clk'
 Slack : -3.000
-TNS   : -16.383
+TNS   : -34.227
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pb[0]'
 Slack : -3.000
 TNS   : -4.487
 
-Type  : Fast 1200mV 0C Model Setup 'Clk'
-Slack : 0.178
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pb[2]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Motion_Driver:M_DRIVE|cur_state.ERR_STATE'
+Slack : 0.435
 TNS   : 0.000
 
+Type  : Fast 1200mV 0C Model Setup 'Clk'
+Slack : -1.288
+TNS   : -12.581
+
+Type  : Fast 1200mV 0C Model Setup 'Motion_Driver:M_DRIVE|cur_state.ERR_STATE'
+Slack : -1.190
+TNS   : -2.565
+
 Type  : Fast 1200mV 0C Model Setup 'pb[0]'
-Slack : 0.224
+Slack : 0.226
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Clk'
-Slack : 0.152
+Slack : 0.142
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'pb[0]'
 Slack : 0.165
 TNS   : 0.000
 
+Type  : Fast 1200mV 0C Model Hold 'Motion_Driver:M_DRIVE|cur_state.ERR_STATE'
+Slack : 0.338
+TNS   : 0.000
+
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clk'
 Slack : -3.000
-TNS   : -12.297
+TNS   : -24.655
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pb[0]'
 Slack : -3.000
-TNS   : -4.082
+TNS   : -4.067
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pb[2]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Motion_Driver:M_DRIVE|cur_state.ERR_STATE'
+Slack : 0.401
+TNS   : 0.000
 
 ------------------------------------------------------------
