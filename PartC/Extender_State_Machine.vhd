@@ -21,6 +21,9 @@ Entity Extender_State_Machine IS Port
 
  
  SIGNAL current_state, next_state	:  STATE_NAMES;     	-- signals of type STATE_NAMES
+ 
+ -- This signal is used to find if the button has been released since the last rising edge of the clock
+ signal previous_extender_toggle		:	std_logic;  -- Stores previous value of Extender_Toggle
 
 
  BEGIN
@@ -35,8 +38,10 @@ Register_Section: PROCESS (clk_input, rst_n)  -- this process synchronizes the a
 BEGIN
 	IF (rst_n = '0') THEN
 		current_state <= S0;
+		previous_extender_toggle <= '0';
 	ELSIF(rising_edge(clk_input)) THEN
 		current_state <= next_State;
+		previous_extender_toggle <= Extender_Toggle;
 	END IF;
 END PROCESS;	
 
@@ -50,7 +55,7 @@ BEGIN
      CASE current_state IS
           WHEN S0 =>		
 				-- If extender enabled and Extender_Toggle button released, begin extending; else stay retracted
-				IF(Extender_Enable='1' AND falling_edge(Extender_Toggle)) THEN
+				IF(Extender_Enable='1' AND Extender_Toggle='0' AND previous_extender_toggle='1') THEN
 					next_state <= S1;
 				ELSE
 					next_state <= S0;
@@ -58,7 +63,7 @@ BEGIN
 
          WHEN S1 =>		
 				-- If fully extended, enter "extended state" (s2), else continue extending
-				IF(Extender_Position(0) AND Extender_Position(1) AND Extender_Position(2) AND Extender_Position(3)) THEN
+				IF(Extender_Position(0)='1' AND Extender_Position(1)='1' AND Extender_Position(2)='1' AND Extender_Position(3)='1') THEN
 					next_state <= S2;
 				ELSE
 					next_state <= S1;
@@ -66,18 +71,18 @@ BEGIN
 
          WHEN S2 =>		
 				-- If extender enabled and Extender_Toggle button released, begin retracting; else stay extended
-				IF(Extender_Enable='1' AND falling_edge(Extender_Toggle)) THEN
+				IF(Extender_Enable='1' AND Extender_Toggle='0' AND previous_extender_toggle='1') THEN
 					next_state <= S3;
 				ELSE
 					next_state <= S2;
 				END IF;
 				
          WHEN S3 =>
-				-- If not fully retracted, continue extending, else enter "retracted state" (s0)
-				IF(Extender_Position(0) OR Extender_Position(1) OR Extender_Position(2) OR Extender_Position(3)) THEN
-					next_state <= S3;
-				ELSE
+				-- If fully retracted, enter "retracted state" (s0), else continue retracting
+				IF(Extender_Position(0)='0' AND Extender_Position(1)='0' AND Extender_Position(2)='0' AND Extender_Position(3)='0') THEN
 					next_state <= S0;
+				ELSE
+					next_state <= S3;
 				END IF;
 
 	WHEN OTHERS =>

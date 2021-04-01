@@ -23,7 +23,7 @@ BEGIN
 process (CLK, RESET_n) is
 begin
 	if (RESET_n = '0') then
-		sreg <= "00000000";
+		sreg <= "0000";
 	
 	elsif (rising_edge(CLK) AND (CLK_EN = '1')) then
 	

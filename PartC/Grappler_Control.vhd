@@ -22,7 +22,7 @@ BEGIN
 process (Grappler_Toggle) is
 begin
 	IF (rst_n = '0') THEN
-		sreg <= 0;
+		sreg <= '0';
 	ELSIF(falling_edge(Grappler_Toggle) AND (Grappler_Enable = '1')) then
 		sreg <= NOT sreg;
 	

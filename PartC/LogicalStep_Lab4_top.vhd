@@ -58,6 +58,8 @@ signal extender_LEFT0_RIGHT1	:	std_logic;  -- Used by Bidir_shift_reg for extend
 signal extender_out				:	std_logic;  -- Set to true by extender controller if not fully retracted
 signal grappler_enable 			:	std_logic;  -- Set to true by extender controller if fully extended
 
+signal extender_pos				:	std_logic_vector(3 downto 0);
+
 ------------------------------------------------------------------- 
 	
 -- Here the circuit begins
@@ -65,13 +67,18 @@ signal grappler_enable 			:	std_logic;  -- Set to true by extender controller if
 	
 BEGIN
 
+-- Below line is just for testing extender and grappler
+-- extender_enable <= '1';
+
+
 -- Extender controller
-Extender_SM : Extender_State_Machine port map(Clk, rst_n, pb(1), extender_enable, leds(7 downto 4), 
+Extender_SM : Extender_State_Machine port map(Clk, rst_n, pb(1), extender_enable, extender_pos, 
 															extender_Clk_en, extender_LEFT0_RIGHT1, extender_out, grappler_enable);
 -- Extender 4 bit bidir_shift_reg
-Extender_bsr : Bidir_shift_reg_4bit port map(Clk, rst_n, extender_Clk_en, extender_LEFT0_RIGHT1, leds(7 downto 4));
+Extender_bsr : Bidir_shift_reg_4bit port map(Clk, rst_n, extender_Clk_en, extender_LEFT0_RIGHT1, extender_pos);
 -- Grappler controller
 g_controller: Grappler_Control port map(rst_n, pb(0), grappler_enable, leds(3));
 
+leds(7 downto 4) <= extender_pos;
 
 END Circuit;

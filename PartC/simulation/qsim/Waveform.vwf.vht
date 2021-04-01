@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "03/31/2021 02:09:44"
+-- Generated on "03/31/2021 23:37:31"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          LogicalStep_Lab4_top
 -- 
@@ -62,43 +62,47 @@ BEGIN
 -- Clk
 t_prcs_Clk: PROCESS
 BEGIN
-	FOR i IN 1 TO 49
-	LOOP
-		Clk <= '0';
-		WAIT FOR 10000 ps;
-		Clk <= '1';
-		WAIT FOR 10000 ps;
-	END LOOP;
+LOOP
 	Clk <= '0';
 	WAIT FOR 10000 ps;
 	Clk <= '1';
-	WAIT FOR 9000 ps;
-	Clk <= '0';
-WAIT;
+	WAIT FOR 10000 ps;
+	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
+END LOOP;
 END PROCESS t_prcs_Clk;
+
+-- rst_n
+t_prcs_rst_n: PROCESS
+BEGIN
+	rst_n <= '0';
+	WAIT FOR 40000 ps;
+	rst_n <= '1';
+WAIT;
+END PROCESS t_prcs_rst_n;
+
+-- pb[1]
+t_prcs_pb_1: PROCESS
+BEGIN
+	pb(1) <= '0';
+	WAIT FOR 60000 ps;
+	pb(1) <= '1';
+	WAIT FOR 20000 ps;
+	pb(1) <= '0';
+	WAIT FOR 40000 ps;
+	pb(1) <= '1';
+	WAIT FOR 20000 ps;
+	pb(1) <= '0';
+WAIT;
+END PROCESS t_prcs_pb_1;
 
 -- pb[0]
 t_prcs_pb_0: PROCESS
 BEGIN
 	pb(0) <= '0';
-	WAIT FOR 50000 ps;
+	WAIT FOR 180000 ps;
 	pb(0) <= '1';
+	WAIT FOR 20000 ps;
+	pb(0) <= '0';
 WAIT;
 END PROCESS t_prcs_pb_0;
-
--- sw[1]
-t_prcs_sw_1: PROCESS
-BEGIN
-	sw(1) <= '1';
-	WAIT FOR 600000 ps;
-	sw(1) <= '0';
-WAIT;
-END PROCESS t_prcs_sw_1;
-
--- sw[0]
-t_prcs_sw_0: PROCESS
-BEGIN
-	sw(0) <= '1';
-WAIT;
-END PROCESS t_prcs_sw_0;
 END LogicalStep_Lab4_top_arch;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LogicalStep_Lab4_top
-Wed Mar 31 06:09:59 2021
+Wed Mar 31 23:23:57 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -10,7 +10,15 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |LogicalStep_Lab4_top|Extender_State_Machine:Extender_SM|current_state
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "Extender_State_Machine:Extender_SM"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -37,22 +45,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Mar 31 06:09:59 2021           ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 31 23:23:57 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; LogicalStep_Lab4_top                        ;
 ; Top-level Entity Name              ; LogicalStep_Lab4_top                        ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 14                                          ;
+;     Total combinational functions  ; 13                                          ;
+;     Dedicated logic registers      ; 10                                          ;
+; Total registers                    ; 10                                          ;
+; Total pins                         ; 30                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -151,11 +159,137 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                          ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+; LogicalStep_Lab4_top.vhd         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd   ;         ;
+; Grappler_Control.vhd             ; yes             ; User VHDL File  ; C:/intelFPGA_lite/ECE124/Lab4/PartC/Grappler_Control.vhd       ;         ;
+; Extender_State_Machine.vhd       ; yes             ; User VHDL File  ; C:/intelFPGA_lite/ECE124/Lab4/PartC/Extender_State_Machine.vhd ;         ;
+; Bidir_shift_reg_4bit.vhd         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/ECE124/Lab4/PartC/Bidir_shift_reg_4bit.vhd   ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 14          ;
+;                                             ;             ;
+; Total combinational functions               ; 13          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 8           ;
+;     -- 3 input functions                    ; 2           ;
+;     -- <=2 input functions                  ; 3           ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 13          ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 10          ;
+;     -- Dedicated logic registers            ; 10          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 30          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; rst_n~input ;
+; Maximum fan-out                             ; 10          ;
+; Total fan-out                               ; 113         ;
+; Average fan-out                             ; 1.36        ;
++---------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                             ;
++-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                      ; Entity Name            ; Library Name ;
++-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+------------------------+--------------+
+; |LogicalStep_Lab4_top                   ; 13 (0)              ; 10 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 30   ; 0            ; 0          ; |LogicalStep_Lab4_top                                    ; LogicalStep_Lab4_top   ; work         ;
+;    |Bidir_shift_reg_4bit:Extender_bsr|  ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Bidir_shift_reg_4bit:Extender_bsr  ; Bidir_shift_reg_4bit   ; work         ;
+;    |Extender_State_Machine:Extender_SM| ; 8 (8)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Extender_State_Machine:Extender_SM ; Extender_State_Machine ; work         ;
+;    |Grappler_Control:g_controller|      ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |LogicalStep_Lab4_top|Grappler_Control:g_controller      ; Grappler_Control       ; work         ;
++-----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------+
+; State Machine - |LogicalStep_Lab4_top|Extender_State_Machine:Extender_SM|current_state       ;
++------------------+------------------+------------------+------------------+------------------+
+; Name             ; current_state.S3 ; current_state.S2 ; current_state.S1 ; current_state.S0 ;
++------------------+------------------+------------------+------------------+------------------+
+; current_state.S0 ; 0                ; 0                ; 0                ; 0                ;
+; current_state.S1 ; 0                ; 0                ; 1                ; 1                ;
+; current_state.S2 ; 0                ; 1                ; 0                ; 1                ;
+; current_state.S3 ; 1                ; 0                ; 0                ; 1                ;
++------------------+------------------+------------------+------------------+------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 10    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 10    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Extender_State_Machine:Extender_SM"                                                            ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; extender_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; extender_out    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 30                          ;
+; cycloneiii_ff         ; 10                          ;
+;     CLR               ; 6                           ;
+;     ENA CLR           ; 4                           ;
+; cycloneiii_lcell_comb ; 14                          ;
+;     normal            ; 14                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.32                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -164,7 +298,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Mar 31 06:09:47 2021
+    Info: Processing started: Wed Mar 31 23:23:45 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LogicalStep_Lab4 -c LogicalStep_Lab4_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -195,13 +329,52 @@ Info (12021): Found 2 design units, including 1 entities, in source file extende
 Info (12021): Found 2 design units, including 1 entities, in source file bidir_shift_reg_4bit.vhd
     Info (12022): Found design unit 1: Bidir_shift_reg_4bit-one File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Bidir_shift_reg_4bit.vhd Line: 17
     Info (12023): Found entity 1: Bidir_shift_reg_4bit File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Bidir_shift_reg_4bit.vhd Line: 7
-Error (10309): VHDL Interface Declaration error in LogicalStep_Lab4_top.vhd(69): interface object "leds" of mode out cannot be read. Change object mode to buffer. File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 69
-Error (10577): VHDL error at LogicalStep_Lab4_top.vhd(69): actual port "leds" of mode "out" cannot be associated with formal port "Extender_Position" of mode "in" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 69
-Error (10600): VHDL error at LogicalStep_Lab4_top.vhd(69): can't read value of interface object "leds" of mode OUT File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 69
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 4781 megabytes
-    Error: Processing ended: Wed Mar 31 06:09:59 2021
-    Error: Elapsed time: 00:00:12
-    Error: Total CPU time (on all processors): 00:00:26
+Info (12127): Elaborating entity "LogicalStep_Lab4_top" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at LogicalStep_Lab4_top.vhd(58): object "extender_out" assigned a value but never read File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 58
+Warning (10873): Using initial value X (don't care) for net "leds[15..8]" at LogicalStep_Lab4_top.vhd(14) File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+Warning (10873): Using initial value X (don't care) for net "leds[2..0]" at LogicalStep_Lab4_top.vhd(14) File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+Info (12128): Elaborating entity "Extender_State_Machine" for hierarchy "Extender_State_Machine:Extender_SM" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at Extender_State_Machine.vhd(58): signal "previous_extender_toggle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Extender_State_Machine.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at Extender_State_Machine.vhd(74): signal "previous_extender_toggle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Extender_State_Machine.vhd Line: 74
+Info (12128): Elaborating entity "Bidir_shift_reg_4bit" for hierarchy "Bidir_shift_reg_4bit:Extender_bsr" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 81
+Warning (10492): VHDL Process Statement warning at Bidir_shift_reg_4bit.vhd(28): signal "CLK_EN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Bidir_shift_reg_4bit.vhd Line: 28
+Info (12128): Elaborating entity "Grappler_Control" for hierarchy "Grappler_Control:g_controller" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at Grappler_Control.vhd(24): signal "rst_n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Grappler_Control.vhd Line: 24
+Warning (10492): VHDL Process Statement warning at Grappler_Control.vhd(26): signal "Grappler_Enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/ECE124/Lab4/PartC/Grappler_Control.vhd Line: 26
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "leds[0]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[1]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[2]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[8]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[9]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[10]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[11]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[12]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[13]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[14]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+    Warning (13410): Pin "leds[15]" is stuck at GND File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 14
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "pb[2]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 12
+    Warning (15610): No output dependent on input pin "pb[3]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 12
+    Warning (15610): No output dependent on input pin "sw[0]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[1]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[2]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[3]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[4]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[5]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[6]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
+    Warning (15610): No output dependent on input pin "sw[7]" File: C:/intelFPGA_lite/ECE124/Lab4/PartC/LogicalStep_Lab4_top.vhd Line: 13
+Info (21057): Implemented 44 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 14 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 32 warnings
+    Info: Peak virtual memory: 4790 megabytes
+    Info: Processing ended: Wed Mar 31 23:23:57 2021
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:26
 
 
